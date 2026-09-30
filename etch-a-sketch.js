@@ -16,4 +16,11 @@ function createGrid() {
 }
 
 const container = document.querySelector("#container");
+const body = document.querySelector("body");
+const inputButton = document.createElement("button");
+inputButton.textContent = "Change grid size";
+body.insertBefore(inputButton, container);
+inputButton.addEventListener("click", () => {
+    let input = prompt("How many squares per side for new grid? (max 100)");
+});
 createGrid();
