@@ -6,6 +6,9 @@ function createGrid() {
         for (let col = 0; col <= 15; col++) {
             const square = document.createElement("div");
             square.classList.add("square");
+            square.addEventListener("mouseenter", () => {
+                square.style.backgroundColor = "black";
+            })
             rowDiv.appendChild(square);
         }
         container.appendChild(rowDiv);
