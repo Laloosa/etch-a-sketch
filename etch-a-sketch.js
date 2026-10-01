@@ -22,10 +22,15 @@ inputButton.textContent = "Change grid size";
 body.insertBefore(inputButton, container);
 inputButton.addEventListener("click", () => {
     let input = prompt("How many squares per side for new grid? (max 100)");
-    // removes all children of container
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
+    if (input > 100) {
+        alert("Cannot create grid bigger than 100x100.");
     }
-    createGrid(input);
+    else {
+        // removes all children of container
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        createGrid(input);
+    }
 });
 createGrid(16); //default when page loads
