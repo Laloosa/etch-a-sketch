@@ -7,12 +7,19 @@ function createGrid(number) {
             const square = document.createElement("div");
             square.classList.add("square");
             square.addEventListener("mouseenter", () => {
-                square.style.backgroundColor = "black";
+                square.style.backgroundColor = randomRGB();
             })
             rowDiv.appendChild(square);
         }
         container.appendChild(rowDiv);
     }
+}
+
+function randomRGB() {
+    let rgb1 = Math.floor(Math.random() * 255);
+    let rgb2 = Math.floor(Math.random() * 255);
+    let rgb3 = Math.floor(Math.random() * 255);
+    return "rgb(" + rgb1 + ", " + rgb2 + ", " + rgb3 + ")";
 }
 
 const container = document.querySelector("#container");
