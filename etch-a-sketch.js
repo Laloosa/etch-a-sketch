@@ -7,6 +7,10 @@ function createGrid(number) {
             const square = document.createElement("div");
             square.classList.add("square");
             square.addEventListener("mouseenter", () => {
+                let currentOpacity = Number(square.style.opacity);
+                let newOpacity = currentOpacity + 0.1;
+                square.style.opacity = newOpacity;
+                console.log(newOpacity);
                 square.style.backgroundColor = randomRGB();
             })
             rowDiv.appendChild(square);
@@ -19,7 +23,7 @@ function randomRGB() {
     let rgb1 = Math.floor(Math.random() * 255);
     let rgb2 = Math.floor(Math.random() * 255);
     let rgb3 = Math.floor(Math.random() * 255);
-    return "rgb(" + rgb1 + ", " + rgb2 + ", " + rgb3 + ")";
+    return "rgba(" + rgb1 + ", " + rgb2 + ", " + rgb3 + ")";
 }
 
 const container = document.querySelector("#container");
